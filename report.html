@@ -11807,7 +11807,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -11835,7 +11835,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># load dataset and get the shape of the dataset.</span>
@@ -11876,7 +11876,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -11891,7 +11891,7 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[3]:</div>
+<div class="prompt output_prompt">Out[58]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12037,7 +12037,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
@@ -12052,7 +12052,7 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -12100,7 +12100,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">&#39;Any Null value:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
@@ -12156,54 +12156,12 @@ Age Min: -1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">data_clean</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span> <span class="n">data_clean</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(110526, 14)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="The-invalid-record-(with-negative-age-value)-is-deleted.--The-new-data-frame-(data_clean)-has-110526-records.">The invalid record (with negative age value) is deleted.  The new data frame (data_clean) has 110526 records.<a class="anchor-link" href="#The-invalid-record-(with-negative-age-value)-is-deleted.--The-new-data-frame-(data_clean)-has-110526-records.">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">convert2value</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">column</span><span class="p">[</span><span class="s1">&#39;No-show&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-<span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;no-show-value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_clean</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convert2value</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">Age</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">Age</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">data_clean</span> <span class="o">=</span> <span class="n">data</span>
+<span class="n">data_clean</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12218,23 +12176,187 @@ Age Min: -1
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/qyang/virtualenv/udacity/lib/python2.7/site-packages/ipykernel_launcher.py:6: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
+<pre>/Users/qyang/virtualenv/udacity/lib/python2.7/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-  
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
 </pre>
 </div>
 </div>
 
+<div class="output_area">
+<div class="prompt output_prompt">Out[70]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientId</th>
+      <th>AppointmentID</th>
+      <th>Age</th>
+      <th>Scholarship</th>
+      <th>Hipertension</th>
+      <th>Diabetes</th>
+      <th>Alcoholism</th>
+      <th>Handcap</th>
+      <th>SMS_received</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.105270e+05</td>
+      <td>1.105270e+05</td>
+      <td>110527.000000</td>
+      <td>110527.000000</td>
+      <td>110527.000000</td>
+      <td>110527.000000</td>
+      <td>110527.000000</td>
+      <td>110527.000000</td>
+      <td>110527.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.474963e+14</td>
+      <td>5.675305e+06</td>
+      <td>37.088883</td>
+      <td>0.098266</td>
+      <td>0.197246</td>
+      <td>0.071865</td>
+      <td>0.030400</td>
+      <td>0.022248</td>
+      <td>0.321026</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.560949e+14</td>
+      <td>7.129575e+04</td>
+      <td>23.110190</td>
+      <td>0.297675</td>
+      <td>0.397921</td>
+      <td>0.258265</td>
+      <td>0.171686</td>
+      <td>0.161543</td>
+      <td>0.466873</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.921784e+04</td>
+      <td>5.030230e+06</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>4.172614e+12</td>
+      <td>5.640286e+06</td>
+      <td>18.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.173184e+13</td>
+      <td>5.680573e+06</td>
+      <td>37.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.439172e+13</td>
+      <td>5.725524e+06</td>
+      <td>55.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>9.999816e+14</td>
+      <td>5.790484e+06</td>
+      <td>115.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>4.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The--1-age-value-is-replaced-by-0.--So-now-all-the-values-in-the-new-data-frame-(data_clean)-are-valid.">The -1 age value is replaced by 0.  So now all the values in the new data frame (data_clean) are valid.<a class="anchor-link" href="#The--1-age-value-is-replaced-by-0.--So-now-all-the-values-in-the-new-data-frame-(data_clean)-are-valid.">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">convert2value</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">column</span><span class="p">[</span><span class="s1">&#39;No-show&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+<span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;no-show-value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_clean</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convert2value</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12249,7 +12371,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
+<div class="prompt output_prompt">Out[72]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12411,7 +12533,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">no_show_ratio</span> <span class="o">=</span> <span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;no-show-value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -12430,7 +12552,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.201934386479
+<pre>0.201932559465
 </pre>
 </div>
 </div>
@@ -12459,7 +12581,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># define a function to calculate no-show ratio by group </span>
@@ -12481,7 +12603,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">byage_ratio</span> <span class="o">=</span> <span class="n">group_noshowratio</span><span class="p">(</span><span class="n">data_clean</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">)</span>
@@ -12497,7 +12619,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[75]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12526,7 +12648,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.180559</td>
+      <td>0.180508</td>
       <td>0</td>
     </tr>
     <tr>
@@ -12562,17 +12684,17 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">byage_ratio</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="c1"># make a scattor plot </span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">byage_ratio</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">byage_ratio</span><span class="p">[</span><span class="s1">&#39;no-show-ratio&#39;</span><span class="p">])</span>
 <span class="c1"># calculate the correlation coefficient between no-show ratio and age</span>
-<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">byage_ratio</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">byage_ratio</span><span class="p">[</span><span class="s1">&#39;no-show-ratio&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;No-show ratio&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Age vs. No-show ratio&#39;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">byage_ratio</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">byage_ratio</span><span class="p">[</span><span class="s1">&#39;no-show-ratio&#39;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12584,12 +12706,13 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[76]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Text(0.5,1,u&#39;Age vs. No-show ratio&#39;)</pre>
+<pre>array([[ 1.        , -0.39072994],
+       [-0.39072994,  1.        ]])</pre>
 </div>
 
 </div>
@@ -12794,15 +12917,15 @@ SO4pYdb13CZhNn1fljQP2A14rwOEzSUuSZiZWSG3SZiZWSEHCTMzK+QgYWZmhRwkzMyskIOEmZkV
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">byage_ratio_filter</span> <span class="o">=</span> <span class="n">byage_ratio</span><span class="p">[</span><span class="n">byage_ratio</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">110</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">byage_ratio_filter</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">byage_ratio_filter</span><span class="p">[</span><span class="s1">&#39;no-show-ratio&#39;</span><span class="p">])</span>
-<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">byage_ratio_filter</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">byage_ratio_filter</span><span class="p">[</span><span class="s1">&#39;no-show-ratio&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;No-show ratio&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Age vs. No-show ratio&#39;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">byage_ratio_filter</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">byage_ratio_filter</span><span class="p">[</span><span class="s1">&#39;no-show-ratio&#39;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12814,12 +12937,13 @@ SO4pYdb13CZhNn1fljQP2A14rwOEzSUuSZiZWSG3SZiZWSEHCTMzK+QgYWZmhRwkzMyskIOEmZkV
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[77]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Text(0.5,1,u&#39;Age vs. No-show ratio&#39;)</pre>
+<pre>array([[ 1.        , -0.66545101],
+       [-0.66545101,  1.        ]])</pre>
 </div>
 
 </div>
@@ -13049,7 +13173,7 @@ ZrncZmFmZrkcLMzMLJeDhZmZ5XKwMDOzXA4WZmaW6/8D5mQpqeNDt/4AAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">bygender_ratio</span> <span class="o">=</span> <span class="n">group_noshowratio</span><span class="p">(</span><span class="n">data_clean</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">)</span>
@@ -13069,7 +13193,7 @@ ZrncZmFmZrkcLMzMLJeDhZmZ5XKwMDOzXA4WZmaW6/8D5mQpqeNDt/4AAAAASUVORK5CYII=
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[78]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -13098,7 +13222,7 @@ ZrncZmFmZrkcLMzMLJeDhZmZ5XKwMDOzXA4WZmaW6/8D5mQpqeNDt/4AAAAASUVORK5CYII=
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.203149</td>
+      <td>0.203146</td>
       <td>F</td>
     </tr>
     <tr>
@@ -13293,7 +13417,7 @@ egAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">female</span> <span class="o">=</span> <span class="n">data_clean</span><span class="p">[</span><span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;F&#39;</span><span class="p">][</span><span class="s1">&#39;no-show-value&#39;</span><span class="p">]</span>
@@ -13326,8 +13450,8 @@ egAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>t score: 1.37301995631
-degree of freedom: 110524
+<pre>t score: 1.37190667884
+degree of freedom: 110525
 </pre>
 </div>
 </div>
@@ -13356,7 +13480,7 @@ degree of freedom: 110524
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">bysms_ratio</span> <span class="o">=</span> <span class="n">group_noshowratio</span><span class="p">(</span><span class="n">data_clean</span><span class="p">,</span> <span class="s1">&#39;SMS_received&#39;</span><span class="p">)</span>
@@ -13378,7 +13502,7 @@ degree of freedom: 110524
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[81]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -13407,7 +13531,7 @@ degree of freedom: 110524
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.167035</td>
+      <td>0.167033</td>
       <td>0</td>
     </tr>
     <tr>
@@ -13592,7 +13716,7 @@ SeAI27eWGwbNpDqlNb2NNkf0KVedjYiIRjkNFRERjRIWERHRKGERERGNEhYREdEoYREREY0SFhER
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sms</span><span class="o">=</span><span class="n">data_clean</span><span class="p">[</span><span class="n">data_clean</span><span class="p">[</span><span class="s1">&#39;SMS_received&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;no-show-value&#39;</span><span class="p">]</span>
@@ -13625,8 +13749,8 @@ SeAI27eWGwbNpDqlNb2NNkf0KVedjYiIRjkNFRERjRIWERHRKGERERGNEhYREdEoYREREY0SFhER
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>t score: 39.7411606488
-degree of freedom: 110524
+<pre>t score: 39.7420923978
+degree of freedom: 110525
 </pre>
 </div>
 </div>
